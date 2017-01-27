@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Special version of Bootstrap that only affects content wrapped in .bootstrap-iso -->
+<link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css" /> 
+
+<!--Font Awesome (added because you use icons in your prepend/append)-->
+<link rel="stylesheet" href="https://formden.com/static/cdn/font-awesome/4.4.0/css/font-awesome.min.css" />
+
+<!-- Inline CSS based on choices in "Settings" tab -->
+<style>.bootstrap-iso .formden_header h2, .bootstrap-iso .formden_header p, .bootstrap-iso form{font-family: Arial, Helvetica, sans-serif; color: black}.bootstrap-iso form button, .bootstrap-iso form button:hover{color: white !important;} .asteriskField{color: red;}</style>
+
+<style>
+.loader {
+  position: absolute;
+  border: 10px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 10px solid #3498db;
+  width: 40px;
+  height: 40px;
+  animation: spin 2s linear infinite;  
+}
+
+
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+</style>
+
+<style>
+.centerspin{
+    margin: auto;
+    width: 5%;
+}
+
+
+</style>
+
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+
+
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title> 
+        HK Threading Salon</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/business-casual.css" rel="stylesheet">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css">
+  
+   <style>.bootstrap-iso .formden_header h2, .bootstrap-iso .formden_header p, .bootstrap-iso form{font-family: Arial, Helvetica, sans-serif; color: black}.bootstrap-iso form button, .bootstrap-iso form button:hover{color: white !important;} .asteriskField{color: red;}
+    </style>
+    
+    <!-- Special version of Bootstrap that only affects content wrapped in .bootstrap-iso -->
+    <link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css" /> 
+
+    <!--Font Awesome (added because you use icons in your prepend/append)-->
+    <link rel="stylesheet" href="https://formden.com/static/cdn/font-awesome/4.4.0/css/font-awesome.min.css" />
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+ 
+
+</head>
+
+<body>
+
+
+    <div class="brand">HK Threading Salon</div>
+    <div class="address-bar">2930 S 1st St Suite 400 | Garland, TX 75041 | 214.230.2016</div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- navbar-brand is hidden on larger screens, but visible when the menu is collapsed -->
+                <a class="navbar-brand" href="index.html">HK Threading</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="about.html">About</a>
+                    </li>
+                    <li>
+                        <a href="services.html">Services</a>
+                    </li>
+                    <li>
+                        <a href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <div class="container">
+
+        <div class="row">
+            <div class="box">
+                <div class="col-lg-12 text-center">
+                    <div id="carousel-example-generic" class="carousel slide">
+                        <!-- Indicators -->
+                        <ol class="carousel-indicators hidden-xs">
+                            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                        </ol>
+
+                        <!-- Wrapper for slides -->
+                        <div class="carousel-inner">
+                            <div class="item active">
+                                <img class="img-responsive img-full" src="img/slide-1.jpg" alt="">
+                            </div>
+                            <div class="item">
+                                <img class="img-responsive img-full" src="img/slide-2.jpg" alt="">
+                            </div>
+                            <div class="item">
+                                <img class="img-responsive img-full" src="img/slide-3.jpg" alt="">
+                            </div>
+                        </div>
+
+                        <!-- Controls -->
+                        <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                            <span class="icon-prev"></span>
+                        </a>
+                        <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                            <span class="icon-next"></span>
+                        </a>
+                    </div>
+                    <h2 class="brand-before">
+                        <small>Welcome to</small>
+                    </h2>
+                    <h1 class="brand-name">HK Threading</h1>
+                    <hr class="tagline-divider">
+                    <h2>
+                        <small>By
+                            <strong>Aruna and Sonal</strong>
+                        </small>
+                    </h2>
+                   
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="box">
+                <div class="col-lg-12" >
+                <hr>
+                <h2 class="intro-text text-center">Make an
+                    <strong>Appointment</strong>
+                </h2>
+                <hr>
+                <div class="alert alert-success" role="alert" align="center" style="display:none;" id="appsuccessmsg"> 
+                    <strong> You have Successfully made an Appointment! Thank You for choosing HK Threading Salon.
+                    </strong> 
+                </div>
+
+                    <form role="form" method="post" id="form" name="form">
+                       
+                        <div class="form-group " id="datediv">
+                            <label class="control-label " for="date">
+                               Date
+                            </label>
+                            <div class="input-group date " id="date" name="date">
+                           
+                                    <span class="input-group-addon">
+                                        <span class="glyphicon glyphicon-calendar"> </span>
+                                    </span>
+                                    <input class="form-control" type="text" data-date-format="MM/DD/YYYY" id="datepicked" placeholder="MM/DD/YYYY" name="datepicked"/>
+                            </div>
+                        </div>
+
+                        <div class="form-group " id="servicediv" >
+                            <label class="control-label " for="person">
+                                Select the Service
+                            </label>
+                            <select class="select form-control" id="service" name="service">
+                                <option> Select One</option>
+                                <option value="Threading">
+                                Threading
+                                </option>
+                                <option value="Waxing">
+                                Waxing
+                                </option>
+                                 <option value="Facial">
+                                Facial
+                                </option>
+                                <option value="Other">
+                                Other
+                                </option>
+                            </select>
+                        </div>
+                        <div class="form-group " id="persondiv">
+                            <label class="control-label " for="person">
+                                Select the Employee
+                            </label>
+                            <select class="select form-control" id="person" name="person">
+                                <option> Select One</option>
+                                <option value="Aruna">
+                                Aruna
+                                </option>
+                                <option value="Sonal">
+                                Sonal
+                                </option>
+                            </select>
+                        </div>   
+                    
+                        <div class="form-group ">
+                            <br>
+                            <div 
+                            id="times">
+                            </div>
+                            <br>
+                        </div>
+                        <div class="form-group">
+                            <div>
+                                <button class="btn btn-primary " name="submit" type="submit" id="submitB">
+                                    Next
+                                </button>
+                            </div>
+                        </div> 
+                    </form>
+                    <form role="form"  method="post" id="formtwo" name="formtwo" style="display:none;">
+                        <div class="form-group " >
+                            <label for="name">*Full Name</label>
+                            <input type="text" class="form-control" id="fullname" name="name" placeholder="Enter Full Name" required="true">
+                        </div>
+                        <div class="form-group " >
+                            <label for="email">*Email</label>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Email Address" required="true">
+                        </div>
+
+                        <div class="centerspin" align="center">
+
+                        <div class="loader" style="display:none;" align="center" id="spin"></div>
+
+                        </div>
+                        <div class="form-group " >  
+                            <label for="phone">*Phone No (xxx-xxx-xxxx) </label>
+                            <input type="tel" class="form-control" id="number" name="number" placeholder="Phone Number" required="true" pattern="^\d{3}-\d{3}-\d{4}$">
+                        </div>
+                        <div class="form-group "> 
+                            <label for="message">Message</label>
+                            <input type="text" class="form-control" id="message" name="message" placeholder="Leave Us a Message" >
+
+                        </div>   
+                        <div>
+                            <label style="font-size:90%;">* Required</label>
+                        </div>
+                        <div class="form-group">
+                            <div>
+                                <button class="btn btn-success center-block" name="makeapp" type="submit" id="makeapp" style="text-align:center">
+                                    Make an Appointment
+                                </button>
+                            </div>
+                        </div> 
+                    </form>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <!-- /.container -->
+    
+
+    <footer>
+        <div class="container">
+            <div class="row">
+               
+                <div class="text-center col-lg-12">
+
+                    <a class="btn btn-social-icon btn-facebook" href="https://www.facebook.com/HKThreadingSalon/">
+                        <i class="fa fa-facebook"></i>
+                    </a>
+                    <p style="font-size:90%;"> Copyright &copy; HK Threading Salon 2016</p>
+                     
+                </div>
+                
+            </div>
+        </div>
+
+    </footer>
+
+
+
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Script to Activate the Carousel -->
+    <script>
+    $('.carousel').carousel({
+        interval: 5000 //changes the speed
+    })
+    </script>
+
+</body>
+
+
+<!-- <script type="text/javascript">
+    
+    var form = document.getElementById('formtwo'); // form has to have ID: <form id="formID">
+    form.noValidate = true;
+    form.addEventListener('submit', function(event) { // listen for form submitting
+        if (!event.target.checkValidity()) {
+            event.preventDefault(); // dismiss the default functionality
+            alert('Please, fill the required information'); // error message
+        }
+    }, false);
+
+
+</script> -->
+
+
+<script type="text/javascript">
+
+// variables to be store in database
+var nameSelected;
+var dateSelected;
+var serviceSelected;
+var hourSelected;
+var custName;
+var custEmail;
+var custPhone;
+var custMessage; 
+
+
+// change in person 
+var name = $('#person').find("option:selected").text();   
+$('#person').change(function () {
+    
+    name = $(this).find("option:selected").text();
+    nameSelected = name; // For Storing into Database
+    dateSelected = $('#datepicked').val();
+ 
+    getTimes($('#datepicked').val(), name);
+
+    
+});
+
+
+
+// change in service
+$('#service').change(function () {
+    serviceSelected = $(this).find("option:selected").text();
+});
+
+// call get times after next button
+$('#form').submit(function () {
+    if(dateSelected == null || serviceSelected == null || nameSelected == null){
+        if(dateSelected == null){
+            alert("Please select the date.");
+            return false;
+        }
+        else if(serviceSelected == null){
+            alert("Please select the service.");
+            return false;
+        }
+        
+        else if(nameSelected == null){
+            alert("Please select the staff member.");
+            return false;
+        }
+
+    }
+    if(hourSelected == null){
+        alert("Please select the date and time.");
+        return false;
+    }
+  
+    $('#form').hide();
+    $('#formtwo').show(); 
+    return false;
+
+});
+
+// make appointment button
+$('#formtwo').submit(function () {
+
+    // pre: check all fields have value
+    // Insert into Database
+
+    custName = document.getElementById("fullname").value;
+    custEmail =  document.getElementById("email").value;
+    custPhone =  document.getElementById("number").value;
+    custMessage =  document.getElementById("message").value;
+
+     var urlString ="name="+nameSelected+"&date="+dateSelected+"&service="+serviceSelected+"&hour="+hourSelected;
+
+     var urlStringAppt = "fullname="+custName+"&email="+custEmail+"&number="+custPhone+"&message="+custMessage+"&name="+nameSelected+"&date="+dateSelected+"&service="+serviceSelected+"&hour="+hourSelected;
+
+     // Entry to the Database
+    $.ajax
+    ({
+      url: "insert.php",
+      type : "POST",
+      cache : false,
+      data : urlString,
+      success: function(response)
+      {
+        //alert(response);
+      }
+    });
+
+
+    // Email appointment data
+     $.ajax
+    ({
+      url: "appointnmentform.php",
+      type : "POST",
+      cache : false,
+      data : urlStringAppt,
+      success: function(response)
+
+      {
+        //alert(response);
+         $('#appsuccessmsg').show();
+         window.setTimeout(showSpinner, 2000);
+      }
+    });
+
+
+   
+    
+
+    
+     
+    return false;
+});
+
+
+
+</script>
+    
+
+<script>
+function showSpinner(){
+    $('#spin').show();
+    window.setTimeout(showFormOne, 1000);
+}
+
+function showFormOne(){
+    $('#spin').hide();
+    $('#appsuccessmsg').hide();
+    $('#formtwo').hide();
+    document.getElementById("form").reset();
+    $('#form').show();
+    $('#times').hide();
+}
+
+function getTimes(date, name){
+
+   
+    console.log(date);
+    if(date == "" || name == ""){
+        // show all the slots
+       
+    }
+    else{
+        if(window.XMLHttpRequest){
+
+            // code for IE7+, Firefox, Chrome, Opera, Safari
+          
+            xmlhttp = new XMLHttpRequest();
+        }
+        else{
+
+            xmlhttp = new ActivateXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange = function(){
+             if (this.readyState == 4  && this.status == 200) {
+            
+
+                // alert("Error Inside Code: " + this.readyState + " and " + this.status);
+                // alert("Recieved Response " + this.responseText);
+                var json = JSON.parse(this.responseText);
+        
+             
+                var allhours = [10, 11, 12, 1, 2, 3, 4, 5, 6];
+                var av = arr_diff (json, allhours);
+                //alert("av " + av);
+                showAh(av);
+
+                }
+                // else{
+                //       alert("Error Code: " + this.readyState + " and " + this.status);
+                // }
+             };
+
+           xmlhttp.open("GET","times.php?dt="+date+"&nm="+name,true);
+           xmlhttp.send(null);
+        
+    }
+}
+</script>
+
+
+<script>
+
+// show available hours buttons
+function showAh(av){
+    
+    // remove all the elements first
+    var myNode = document.getElementById("times");
+    myNode.innerHTML = '';
+    for(i = 0; i < av.length; i++){
+        var btn_id = av[i];
+
+        var btn_txt;
+        if(av[i] <= 12 && av[i] >= 10){
+            btn_txt = av[i] + ":00 AM ";
+        }
+        else{
+            btn_txt = av[i] + ":00 PM ";
+
+        }
+
+        
+        var btn = document.createElement("BUTTON");        // Create a <button> element
+        btn.id = btn_id;
+        btn.className = "btn btn-success";
+        btn.style = "margin-bottom: 8px";
+        //btn.style = "margin-bottom: 14px";
+        var t = document.createTextNode(btn_txt);       // Create a text node
+        btn.onclick = function () {
+            hourSelected = this.id;
+            return false;
+        };
+        btn.appendChild(t);       
+        document.getElementById("times").appendChild(btn);             
+         $('#times').show();
+
+
+        // var button='<button class="btn btn-primary" id="' + btn_id + '" name="' + btn_txt+ '">'+btn_txt+'</button>&nbsp;';
+        // $("#times").append(button);
+    }
+
+}
+</script>
+
+
+<script>
+function arr_diff (a1, a2) {
+    var a = [], diff = [];
+    for (var i = 0; i < a1.length; i++) {
+        a[a1[i]] = true;
+    }
+    for (var i = 0; i < a2.length; i++) {
+        if (a[a2[i]]) {
+            delete a[a2[i]];
+        } else {
+            a[a2[i]] = true;
+        }
+    }
+    for (var k in a) {
+        diff.push(k);
+    }
+    return diff;
+};
+
+
+
+</script>
+
+
+<!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js"></script>
+
+ <script type="text/javascript">
+        $(document).ready(function(){
+            $('button[type="submit"]').click(function(){
+                $("#form").hide();
+                return false;        
+            })
+        })
+</script> -->
+
+
+<!-- Extra JavaScript/CSS added manually in "Settings" tab -->
+<!--  jQuery -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+<!-- Isolated Version of Bootstrap, not needed if your site already uses Bootstrap -->
+<link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css" />
+
+<!-- Bootstrap Date-Picker Plugin -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+<script>
+    $(document).ready(function(){
+        var date_input=$('div[name="date"]'); //our date input has the name "date"
+        var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
+        var date = new Date();
+        date_input.datepicker({
+            format: 'mm/dd/yyyy',
+            container: container,
+            todayHighlight: true,
+            autoclose: true,
+            startDate: date,
+            daysOfWeekDisabled: [1]
+        });
+        date_input.datepicker().on('changeDate', function(e){
+            dateSelected = $('#datepicked').val();
+            if(nameSelected != null){
+                 getTimes($('#datepicked').val(), nameSelected);
+            }
+
+        });
+    })
+</script>
+
+</html>
+
+
+
