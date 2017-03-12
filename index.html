@@ -88,6 +88,8 @@
 
     <div class="brand">HK Threading Salon</div>
     <div class="address-bar">2930 S 1st St Suite 400 | Garland, TX 75041 | 214.230.2016</div>
+    <div class="address-bar">Tue - Sat 10:30 A.M. to 6:00 P.M. | Sun 12:00 P.M. to 6:00 P.M. | <br> Mon Closed  </div>
+
 
     <!-- Navigation -->
     <nav class="navbar navbar-default" role="navigation">
@@ -313,9 +315,6 @@
 
     </footer>
 
-
-
-
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
 
@@ -454,12 +453,6 @@ $('#formtwo').submit(function () {
       }
     });
 
-
-   
-    
-
-    
-     
     return false;
 });
 
@@ -488,7 +481,6 @@ function getTimes(date, name){
    
     console.log(date);
     if(date == "" || name == ""){
-        // show all the slots
        
     }
     else{
@@ -508,12 +500,25 @@ function getTimes(date, name){
 
                 // alert("Error Inside Code: " + this.readyState + " and " + this.status);
                 // alert("Recieved Response " + this.responseText);
-                var json = JSON.parse(this.responseText);
+
+                 var dateElement = dateSelected.split("/");
+                 var dateFormat = dateElement[2]+'-'+dateElement[0]+'-'+dateElement[1];
+                 var date = new Date(dateFormat+'T10:00:00Z'); //To avoid timezone issues
+                 var json = JSON.parse(this.responseText);
         
-             
-                var allhours = [10, 11, 12, 1, 2, 3, 4, 5, 6];
+                var allhours;
+                // sunday case
+                if(date.getDay() == 0){
+                    // if it is sunday -> change the array
+                    allhours = [12, 1, 2, 3, 4, 5];
+                }
+                else{
+                    allhours = [11, 12, 1, 2, 3, 4, 5];
+                }
+                
                 var av = arr_diff (json, allhours);
-                //alert("av " + av);
+                // sort the number in descending order (AM times comes before PM)
+                av.sort(sortNumber);
                 showAh(av);
 
                 }
@@ -542,7 +547,7 @@ function showAh(av){
         var btn_id = av[i];
 
         var btn_txt;
-        if(av[i] <= 12 && av[i] >= 10){
+        if(av[i] < 12 && av[i] >= 10){
             btn_txt = av[i] + ":00 AM ";
         }
         else{
@@ -571,6 +576,11 @@ function showAh(av){
     }
 
 }
+
+function sortNumber(a,b) {
+    return b - a;
+}
+
 </script>
 
 
