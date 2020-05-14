@@ -32,7 +32,7 @@
     font-weight: 400;
     letter-spacing: 3px;
     color: #000;
-    background: red;
+    background: #2d8a0a;
     color: white;
     padding: 10px;
 
@@ -104,13 +104,21 @@
 
     <div class="brand">HK Threading Salon</div>
     <div class="address-bar">2930 S 1st St Suite 400 | Garland, TX 75041 | 214.230.2016</div>
-<!--     <div class="address-bar">Mon - Sat 10:30 A.M. to 6:00 P.M. | Sun 11:00 A.M. to 5:30 P.M. | </div>
- -->
-    <div class="address-bar-hours">
+    <div class="address-bar">Mon - Sat 10:30 A.M. to 6:00 P.M. | Sun 11:00 A.M. to 5:30 P.M. | </div>
+
+<!--     <div class="address-bar-hours">
         <b>DUE TO THE ONGOING CORONAVIRUS PANDEMIC, WE ARE TEMPORARILY CLOSING OUR BUSINESS.</b>
         <br/>
         <b>WE WILL UPDATE OUR WEBSITE AS SOON AS WE ARE OPEN.</b>
+    </div> -->
+
+    <div class="address-bar-hours">
+        <b>Currently, we are serving customers by appointments only. Please book an appointment at this website.</b>
+        <br/>
+        <b>Due to the COVID-19 outbreak, we urge all our customers to take all possible precautions for your own safety and the safety of our staff and others. We MANDATE that you must have your FACE MASK on at ALL times while you are on premises.</b>
     </div>
+
+ 
 
 
     <!-- Navigation -->
@@ -154,6 +162,130 @@
     </nav>
 
     <div class="container">
+
+        <div class="row">
+            <div class="box">
+                <div class="col-lg-12" id="mkapp" >
+                <hr>
+                <h2 class="intro-text text-center">Make an
+                    <strong>Appointment</strong>
+                </h2>
+                <hr>
+                <div class="alert alert-success" role="alert" align="center" style="display:none;" id="appsuccessmsg"> 
+                    <strong> You have Successfully made an Appointment! Thank You for choosing HK Threading Salon.
+                    </strong> 
+                </div>
+
+                    <form role="form" method="post" id="form" name="form">
+                       
+                        <div class="form-group " id="datediv">
+                            <label class="control-label " for="date">
+                               Date
+                            </label>
+                            <div class="input-group date " id="date" name="date">
+                           
+                                    <span class="input-group-addon">
+                                        <span class="glyphicon glyphicon-calendar"> </span>
+                                    </span>
+                                    <input class="form-control" type="text" data-date-format="MM/DD/YYYY" id="datepicked" placeholder="MM/DD/YYYY" name="datepicked"/>
+                            </div>
+                        </div>
+
+                        <div class="form-group " id="servicediv" >
+                            <label class="control-label " for="person">
+                                Select the Service
+                            </label>
+                            <select class="select form-control" id="service" name="service">
+                                <option> Select One</option>
+                                <option value="Threading">
+                                Threading
+                                </option>
+                                <option value="Waxing">
+                                Waxing
+                                </option>
+                                 <option value="Facial">
+                                Facial
+                                </option>
+                                <option value="Eyelash">
+                                Eyelash Extension
+                                </option>
+                                <option value="Other">
+                                Other
+                                </option>
+                            </select>
+                        </div>
+                        <div class="form-group " id="persondiv">
+                            <label class="control-label " for="person">
+                                Select the Employee
+                            </label>
+                            <select class="select form-control" id="person" name="person">
+                                <option> Select One</option>
+                                <option value="Aruna">
+                                Aruna
+                                </option>
+                                <option value="Other">
+                                Other
+                                </option>
+                            </select>
+                        </div>   
+                    
+                        <div class="form-group ">
+                            <br>
+                            <div 
+                            id="times">
+                            </div>
+                            <br>
+                        </div>
+                        <div class="form-group">
+                            <div>
+                                <button class="btn btn-primary " name="submit" type="submit" id="submitB">
+                                    Next
+                                </button>
+                            </div>
+                        </div> 
+                    </form>
+                    <form role="form"  method="post" id="formtwo" name="formtwo" style="display:none;">
+                        <div class="form-group " >
+                            <label for="name">*Full Name</label>
+                            <input type="text" class="form-control" id="fullname" name="name" placeholder="Enter Full Name" required="true">
+                        </div>
+                        <div class="form-group " >
+                            <label for="email">*Email</label>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Email Address" required="true">
+                        </div>
+
+                        <div class="centerspin" align="center">
+
+                        <div class="loader" style="display:none;" align="center" id="spin"></div>
+
+                        </div>
+                        <div class="form-group " >  
+                            <label for="phone">*Phone No</label>
+                            <input type="tel" class="form-control" id="number" name="number" placeholder="Phone Number" required="true">
+                        </div>
+                        <div class="form-group "> 
+                            <label for="message">Message</label>
+                            <input type="text" class="form-control" id="message" name="message" placeholder="Leave Us a Message" >
+
+                        </div>   
+                        <div>
+                            <label style="font-size:90%;">* Required</label>
+                        </div>
+                        <div style="text-align:center; margin:1%;">
+                            <label style="font-size:90%;">By clicking Make an Appointment, you are agreeing to recieve text message and an email by the HK Threading Salon for an appointment confirmation. </label>
+                        </div>
+                        <div class="form-group">
+                            <div>
+                                <button class="btn btn-success center-block" name="makeapp" type="submit" id="makeapp" style="text-align:center">
+                                    Make an Appointment
+                                </button>
+                            </div>
+                        </div> 
+                    </form>
+                </div>
+            </div>
+            
+        </div>
 
         <div class="row">
             <div class="box">
@@ -211,7 +343,7 @@
             </div>
         </div>
 
-        <div class="row">
+<!--         <div class="row">
             <div class="box">
                 <div class="col-lg-12" id="mkapp" >
                 <hr>
@@ -254,6 +386,9 @@
                                  <option value="Facial">
                                 Facial
                                 </option>
+                                <option value="Eyelash">
+                                Eyelash Extension
+                                </option>
                                 <option value="Other">
                                 Other
                                 </option>
@@ -268,8 +403,8 @@
                                 <option value="Aruna">
                                 Aruna
                                 </option>
-                                <option value="Sonal">
-                                Sonal
+                                <option value="Other">
+                                Other
                                 </option>
                             </select>
                         </div>   
@@ -305,8 +440,8 @@
 
                         </div>
                         <div class="form-group " >  
-                            <label for="phone">*Phone No (xxx-xxx-xxxx) </label>
-                            <input type="tel" class="form-control" id="number" name="number" placeholder="Phone Number" required="true" pattern="^\d{3}-\d{3}-\d{4}$">
+                            <label for="phone">*Phone No</label>
+                            <input type="tel" class="form-control" id="number" name="number" placeholder="Phone Number" required="true">
                         </div>
                         <div class="form-group "> 
                             <label for="message">Message</label>
@@ -315,6 +450,9 @@
                         </div>   
                         <div>
                             <label style="font-size:90%;">* Required</label>
+                        </div>
+                        <div style="text-align:center; margin:1%;">
+                            <label style="font-size:90%;">By clicking Make an Appointment, you are agreeing to recieve text message and an email by the HK Threading Salon for an appointment confirmation. </label>
                         </div>
                         <div class="form-group">
                             <div>
@@ -327,7 +465,7 @@
                 </div>
             </div>
             
-        </div>
+        </div> -->
     </div>
     <!-- /.container -->
     
@@ -482,7 +620,7 @@ $('#formtwo').submit(function () {
       success: function(response)
 
       {
-        //alert(response);
+         // alert(response);
          $('#appsuccessmsg').show();
          window.setTimeout(showSpinner, 2000);
       }
@@ -551,10 +689,10 @@ function getTimes(date, name){
                 // sunday case
                 if(date.getDay() == 0){
                     // if it is sunday -> change the array
-                    allhours = [12, 1, 2, 3, 4, 5];
+                    allhours = ["12:00", "12:30", "01:00", "01:30", "02:00", "02:30", "03:00", "03:30", "04:00", "04:30", "05:00", "05:30"];
                 }
                 else{
-                    allhours = [11, 12, 1, 2, 3, 4, 5];
+                    allhours = ["10:00", "10:30", "11:00", "11:30", "12:00", "12:30", "01:00", "01:30", "02:00", "02:30", "03:00", "03:30", "04:00", "04:30", "05:00", "05:30"];
                 }
                 
                 var av = arr_diff (json, allhours);
@@ -587,12 +725,14 @@ function showAh(av){
     for(i = 0; i < av.length; i++){
         var btn_id = av[i];
 
+
+
         var btn_txt;
-        if(av[i] < 12 && av[i] >= 10){
-            btn_txt = av[i] + ":00 AM ";
+        if(av[i].substring(0, 2) < 12 && av[i].substring(0, 2) >= 10){
+            btn_txt = av[i] + " AM ";
         }
         else{
-            btn_txt = av[i] + ":00 PM ";
+            btn_txt = av[i] + " PM ";
 
         }
 
@@ -682,7 +822,7 @@ function arr_diff (a1, a2) {
             todayHighlight: true,
             autoclose: true,
             startDate: date,
-            daysOfWeekDisabled: [1]
+            // daysOfWeekDisabled: [1]
         });
         date_input.datepicker().on('changeDate', function(e){
             dateSelected = $('#datepicked').val();

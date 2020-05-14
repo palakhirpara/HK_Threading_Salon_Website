@@ -3,7 +3,7 @@
 error_reporting(-1);
 ini_set('display_errors', 'On');
  $con = mysqli_connect('localhost','palak_hirpara','qwerty123', 'hkthreading');
-
+// $con = mysqli_connect('localhost','root','', 'hkthreading');
 if (!$con) {
 
     echo mysqli_connect_error();

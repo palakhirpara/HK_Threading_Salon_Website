@@ -8,6 +8,8 @@ $name = utf8_decode($_GET['nm']);
 
 
 $con = mysqli_connect('localhost','palak_hirpara','qwerty123', 'hkthreading');
+// $con = mysqli_connect('localhost','root','', 'hkthreading');
+// ini_set('display_errors', 'On');
 
 if (!$con) {
 
