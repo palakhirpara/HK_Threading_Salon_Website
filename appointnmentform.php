@@ -40,7 +40,7 @@ else{
 
 // Send SMS
 $sid    = "AC86b527d79aef7895cf0c70160ae2029e"; 
-$token  = "453cded778a8ce15a212f6d53ecbd001";
+$token  = "pleaseinputtokenhere";
 $twilio = new Client($sid, $token);
 $person = "";
 
@@ -48,7 +48,9 @@ $person = "";
 if($nameSelected != 'Other'){
      $person = " with $nameSelected"; 
 }
-$textMsg = "Hi, " . $custName . ". This is from HK Threading Salon. Your appointment on " . $dateSelected . " at " . $hourSelected . $person ." is confirmed. Due to the current COVID-19 pandemic, you MUST have your FACE MASK on at all times while you are inside the salon. Please wait outside till you get a text or call from one of our employees. Thank you.";
+$textMsg = "Your appointment on " . $dateSelected . " at " . $hourSelected . $person . " is confirmed. Due to the current COVID-19 pandemic, you MUST have your FACE MASK on at all times while you are inside the salon. Please wait outside till you get a text or call from one of our employees. Thank you.";
+
+// $textMsg = "Hi, " . $custName . ". This is from HK Threading Salon. Your appointment on " . $dateSelected . " at " . $hourSelected . $person ." is confirmed. Due to the current COVID-19 pandemic, you MUST have your FACE MASK on at all times while you are inside the salon. Please wait outside till you get a text or call from one of our employees. Thank you.";
 
 $messageTwilio = $twilio->messages 
                   ->create($phone, // to 
