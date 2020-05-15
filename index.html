@@ -2,10 +2,10 @@
 <html lang="en">
 
 <!-- Special version of Bootstrap that only affects content wrapped in .bootstrap-iso -->
-<link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css" /> 
+<!-- <link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css" />  -->
 
 <!--Font Awesome (added because you use icons in your prepend/append)-->
-<link rel="stylesheet" href="https://formden.com/static/cdn/font-awesome/4.4.0/css/font-awesome.min.css" />
+<!-- <link rel="stylesheet" href="https://formden.com/static/cdn/font-awesome/4.4.0/css/font-awesome.min.css" /> -->
 
 <!-- Inline CSS based on choices in "Settings" tab -->
 <style>.bootstrap-iso .formden_header h2, .bootstrap-iso .formden_header p, .bootstrap-iso form{font-family: Arial, Helvetica, sans-serif; color: black}.bootstrap-iso form button, .bootstrap-iso form button:hover{color: white !important;} .asteriskField{color: red;}</style>
@@ -71,6 +71,7 @@
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
+     <link href="css/bootstrap-iso.css" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link href="css/business-casual.css" rel="stylesheet">
@@ -83,10 +84,10 @@
     </style>
     
     <!-- Special version of Bootstrap that only affects content wrapped in .bootstrap-iso -->
-    <link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css" /> 
+    <!-- <link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css" />  -->
 
     <!--Font Awesome (added because you use icons in your prepend/append)-->
-    <link rel="stylesheet" href="https://formden.com/static/cdn/font-awesome/4.4.0/css/font-awesome.min.css" />
+    <!-- <link rel="stylesheet" href="https://formden.com/static/cdn/font-awesome/4.4.0/css/font-awesome.min.css" /> -->
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -576,7 +577,8 @@ $('#form').submit(function () {
     }
   
     $('#form').hide();
-    $('#formtwo').show(); 
+    $('#formtwo').show();
+    $('#makeapp').prop('disabled', false); 
     return false;
 
 });
@@ -591,40 +593,45 @@ $('#formtwo').submit(function () {
     custEmail =  document.getElementById("email").value;
     custPhone =  document.getElementById("number").value;
     custMessage =  document.getElementById("message").value;
-
      var urlString ="name="+nameSelected+"&date="+dateSelected+"&service="+serviceSelected+"&hour="+hourSelected;
-
      var urlStringAppt = "fullname="+custName+"&email="+custEmail+"&number="+custPhone+"&message="+custMessage+"&name="+nameSelected+"&date="+dateSelected+"&service="+serviceSelected+"&hour="+hourSelected;
 
+     // Disable the button
+     $('#makeapp').prop('disabled', true);
+
      // Entry to the Database
-    $.ajax
-    ({
+    $.ajax({
       url: "insert.php",
       type : "POST",
       cache : false,
       data : urlString,
-      success: function(response)
-      {
-        //alert(response);
+      success: function(response){
       }
     });
 
 
     // Email appointment data
-     $.ajax
-    ({
+    $.ajax({
       url: "appointnmentform.php",
       type : "POST",
       cache : false,
       data : urlStringAppt,
-      success: function(response)
-
-      {
-         // alert(response);
+      success: function(response){
          $('#appsuccessmsg').show();
          window.setTimeout(showSpinner, 2000);
       }
     });
+
+    $.ajax({
+      url: "cloudupload.php",
+      type : "POST",
+      cache : false,
+      data : urlStringAppt,
+      success: function(response){
+         console.log(response);
+      }
+    });
+
 
     return false;
 });
@@ -656,9 +663,6 @@ function showFormOne(){
 }
 
 function getTimes(date, name){
-
-   
-    console.log(date);
     if(date == "" || name == ""){
        
     }
@@ -806,7 +810,7 @@ function arr_diff (a1, a2) {
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
 
 <!-- Isolated Version of Bootstrap, not needed if your site already uses Bootstrap -->
-<link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css" />
+<!-- <link rel="stylesheet" href="https://formden.com/static/cdn/.bootstrap-isocss" /> -->
 
 <!-- Bootstrap Date-Picker Plugin -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
@@ -821,8 +825,18 @@ function arr_diff (a1, a2) {
             container: container,
             todayHighlight: true,
             autoclose: true,
-            startDate: date,
-            // daysOfWeekDisabled: [1]
+            startDate: date
+            // daysOfWeekDisabled: [4]
+            // beforeShowDay: function (date) {
+            //     var date = new Date(date)
+            //     var formattedDate = (date.getMonth() + 1) + "/" + date.getDate() + "/" + date.getFullYear()
+            //     console.log(formattedDate)
+            //     if(formattedDate == '05/14/2020'){
+            //         return [false, "", "unavailable"];
+            //     } else {
+            //         return [true,"", "available"];
+            //     }
+            // }
         });
         date_input.datepicker().on('changeDate', function(e){
             dateSelected = $('#datepicked').val();

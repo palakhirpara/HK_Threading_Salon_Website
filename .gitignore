@@ -1,0 +1,4 @@
+_Store
+*.DS_Store
+client_secret.json
+composer.lock
