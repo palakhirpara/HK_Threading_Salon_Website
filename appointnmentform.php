@@ -68,7 +68,7 @@ $messageTwilio = $twilio->messages
 //                                "messagingServiceSid" => "MG4c7320eb91e01a6d75dd6dae8b05600a",
 //                                "body" => $textMsg
 //                            ) 
-                  );
+//                  );
 
 // Send Email Message to the Customer
 $msgCustomer = "You have an Appointnment at HK Threading Salon!\nName: " . $custName . "\nStaff: " . $nameSelected . "\nDate: " . $dateSelected . "\nService: " . $serviceSelected . "\nTime: " . $hourSelected . "\nThank You for Choosing HK Threading Salon.";
