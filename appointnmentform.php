@@ -9,7 +9,7 @@ $custName = $_POST['fullname'];
 $custEmail = $_POST['email'];
 $phone = $_POST['number'];
 $message = $_POST['message'];
-$myemail = "hkthreading@gmail.com,palakhirpara1996@gmail.com,aruna.patel45@yahoo.com,samip1990@gmail.com";
+$myemail = "hkthreading@gmail.com,aruna.patel45@yahoo.com";
 // $aruna = "9723576526";
 $aruna = "2142325441";
 
@@ -40,7 +40,7 @@ else{
 
 // Send SMS
 $sid    = "AC86b527d79aef7895cf0c70160ae2029e"; 
-$token  = "pleaseinputtokenhere";
+$token  = "TOKEN_HERE";
 $twilio = new Client($sid, $token);
 $person = "";
 
@@ -48,7 +48,7 @@ $person = "";
 if($nameSelected != 'Other'){
      $person = " with $nameSelected"; 
 }
-$textMsg = "Your appointment on " . $dateSelected . " at " . $hourSelected . $person . " is confirmed. Due to the current COVID-19 pandemic, you MUST have your FACE MASK on at all times while you are inside the salon. Please wait outside till you get a text or call from one of our employees. Thank you.";
+$textMsg = "Your appointment on " . $dateSelected . " at " . $hourSelected . $person . " is confirmed at HK Threading. Due to the current COVID-19 pandemic, you MUST have your FACE MASK on at all times while you are inside the salon. Please wait outside till you get a text or call from one of our employees. Thank you.";
 
 // $textMsg = "Hi, " . $custName . ". This is from HK Threading Salon. Your appointment on " . $dateSelected . " at " . $hourSelected . $person ." is confirmed. Due to the current COVID-19 pandemic, you MUST have your FACE MASK on at all times while you are inside the salon. Please wait outside till you get a text or call from one of our employees. Thank you.";
 
@@ -61,13 +61,13 @@ $messageTwilio = $twilio->messages
                   );
 
  // Send SMS to Employee
-$textMsg = "HK Appointnment Made. " . $custName . " made an appointment on " . $dateSelected . " at " . $hourSelected . " with " . $nameSelected . " for " . $serviceSelected . ". Customer's phone number is " . $phone;
-$messageTwilio = $twilio->messages 
-                  ->create($aruna, // to 
-                           array(  
-                               "messagingServiceSid" => "MG4c7320eb91e01a6d75dd6dae8b05600a",
-                               "body" => $textMsg
-                           ) 
+// $textMsg = "HK Appointnment Made. " . $custName . " made an appointment on " . $dateSelected . " at " . $hourSelected . " with " . $nameSelected . " for " . $serviceSelected . ". Customer's phone number is " . $phone;
+// $messageTwilio = $twilio->messages 
+//                   ->create($aruna, // to 
+//                            array(  
+//                                "messagingServiceSid" => "MG4c7320eb91e01a6d75dd6dae8b05600a",
+//                                "body" => $textMsg
+//                            ) 
                   );
 
 // Send Email Message to the Customer
